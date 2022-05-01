@@ -1,0 +1,157 @@
+:root {
+    --teal-050: #effcf6;
+    --teal-100: #c6f7e2;
+    --teal-200: #8eedc7;
+    --teal-300: #65d6ad;
+    --teal-400: #3ebd93;
+    --teal-500: #27ab83;
+    --teal-600: #199473;
+    --teal-700: #147d64;
+    --teal-800: #0c6b58;
+    --teal-900: #014d40;
+
+    --blue-grey-050: #f0f4f8;
+    --blue-grey-100: #d9e2ec;
+    --blue-grey-200: #bcccdc;
+    --blue-grey-300: #9fb3c8;
+    --blue-grey-400: #829ab1;
+    --blue-grey-500: #627d98;
+    --blue-grey-600: #486581;
+    --blue-grey-700: #334e68;
+    --blue-grey-800: #243b53;
+    --blue-grey-900: #102a43;
+
+    --color1: #DED3BD;
+    --color2: #BFDEBD;
+    --color3: #DEDAD3;
+    --color4: #BDCADE;
+    --color5: #DEC8D5;
+}
+
+main {
+    max-width: max-content;
+    margin: 3em auto 0 auto;
+    padding: 0.5em;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 20%)
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: -48px -16px 40px;
+    padding: 8px 16px;
+    border-radius: 15px 15px 0 0;
+    font-weight: 500;
+    height: 80px;
+    color: #fff;
+    background-color: var(--color4)
+}
+
+.day-of {
+    display: flex;
+    flex-direction: column;
+}
+
+.day-of-month {
+    font-size: 100%;
+}
+
+.day-of-year {
+    font-size: 0.6em;
+}
+
+.bxs-left-arrow,
+.bxs-right-arrow {
+    opacity: 0.6;
+}
+
+.bxs-left-arrow {
+    margin-left: 12px;
+}
+
+.bxs-right-arrow {
+    margin-right: 12px;
+}
+
+.bxs-left-arrow,
+.bxs-right-arrow {
+    opacity: 0.8;
+}
+
+.bxs-left-arrow:hover,
+.bxs-right-arrow:hover {
+    opacity: 1;
+}
+
+/*실질적인 그리드 설정 컬럼 7*/
+.day-of-week,
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-of-week {
+    margin-top: 1.0em;
+}
+
+.day-of-week>* {
+    font-size: 0.5em;
+    color: var(--blue-grey-400);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+/*날짜*/
+.calendar-grid {
+    margin-top: 0.5em;
+}
+
+/*각각의 날짜 하나에 스타일 지정*/
+.calendar-grid button {
+    position: relative;
+    font-size: 0.7em;
+    border: 0;
+    width: 5.5ch;
+    height: 5.5ch;
+    border-radius: 50%;
+    background-color: transparent;
+
+}
+
+.calendar-grid button.disable {
+    color: var(--blue-grey-100);
+}
+
+.calendar-grid button.active {
+    color: var(--blue-grey-500);
+}
+
+.calendar-grid button.active:hover {
+    outline: none;
+    background-color: var(--teal-100);
+    color: var(--teal-900);
+}
+
+.calendar-grid button.active:nth-child(7n) {
+    color: blue
+}
+
+.calendar-grid button.offday,
+.calendar-grid button.active:nth-child(7n + 1) {
+    color: tomato
+}
+
+.calendar-grid button.disable:nth-child(7n) {
+    color: rgb(179, 179, 255)
+}
+
+.calendar-grid button.offday,
+.calendar-grid button.disable:nth-child(7n + 1) {
+    color: rgb(255, 204, 195)
+}
