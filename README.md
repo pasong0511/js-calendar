@@ -19,6 +19,7 @@
 > - HTML
 > - CSS
 > - Vanilla Javascript
+> - Eslintrc
 
 ## 📁 Folder Structure
 ```
@@ -35,5 +36,4 @@
 
 ```
 npm install
-npm run start
 ```
