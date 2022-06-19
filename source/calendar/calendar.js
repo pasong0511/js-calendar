@@ -184,7 +184,6 @@ function renderCalendar(year, month, onPrev, onNext) {
   const calendarDay = renderCalendarDay(year, month)
   calendarDay.classList.add("calendar-day")
 
-
   calendar.appendChild(calendarNav)
   calendar.appendChild(calendarDay)
 
@@ -197,16 +196,14 @@ export function addCalendar(targetElement, selecYear, selecMonth, selecdate) {
   const viewYear = date.getFullYear()
   const viewMonth = date.getMonth()
 
+  //다음 달 이동
   const handleClickNext = (year, month) => {
-    ////
-    console.log(year, month)
     targetElement.innerText = ""
     targetElement.appendChild(renderCalendar(year, month, handleClickNext, handleClickPrev))
   }
 
+  //이전 달 이동
   const handleClickPrev = (year, month) => {
-    ////
-    console.log(year, month)
     targetElement.innerText = ""
     targetElement.appendChild(renderCalendar(year, month, handleClickNext, handleClickPrev))
   }

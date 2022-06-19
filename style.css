@@ -38,5 +38,18 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: var(--color3)
+  background-color: #ECECEC;
+}
+
+.date-picker {
+  width: 200px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  font-size: 0.5em;
+  color: var(--blue-grey-300);
+  cursor: pointer;
+  border: var(--blue-grey-300) solid 1px;
+  border-radius: 5px;
 }

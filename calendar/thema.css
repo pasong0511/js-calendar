@@ -1,9 +1,17 @@
+.title {
+    color: #c7a3b5;
+    font-weight: 300;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+}
+
 .calendar {
-    max-width: max-content;
-    /* min-width: 480px; */
-    width: 60%;
-    height: 60%;
-    margin: 3em auto 0 auto;
+    /*--calendar-size 사이즈 조정 시 전체적인 달력 크기 변경*/
+    --calendar-size: 350px;
+    min-width: 280px;
+    width: var(--calendar-size);
+    /* margin: 1em auto 0 auto; */
+    margin: 50px auto 0 20px;
     padding: 0.5em;
     background-color: #fff;
     border-radius: 15px;
@@ -21,7 +29,8 @@
     font-weight: 500;
     height: 80px;
     color: #fff;
-    background-color: var(--color4)
+    background-image: linear-gradient(90deg, #e0caca, #d4b8ca, #c7a3b5);
+
 }
 
 .day-of {
@@ -85,25 +94,21 @@
     margin-top: 0.5em;
 }
 
-/*첫번째 숫자가 비어있다면 이걸로 조정*/
-/* .calendar-grid button:first-child {
-    grid-column: 6;
-  } */
-
 /*각각의 날짜 하나에 스타일 지정*/
 .calendar-grid button {
     position: relative;
-    font-size: 0.7em;
+    font-size: max(calc((var(--calendar-size) / 100) * 7), 20px);
     border: 0;
-    width: 5.5ch;
-    height: 5.5ch;
+    min-width: 40px;
+    min-height: 40px;
+    width: calc(var(--calendar-size) / 7);
+    height: calc(var(--calendar-size) / 7);
     border-radius: 50%;
     background-color: transparent;
-
 }
 
 .calendar-grid button.today {
-    border: var(--teal-200) solid 4px;
+    border: #FFC1CB solid 4px;
 }
 
 .calendar-grid button.disable {
@@ -116,7 +121,7 @@
 
 .calendar-grid button.active:hover {
     outline: none;
-    background-color: var(--teal-100);
+    background-color: #DCB1BF;
     color: var(--teal-900);
 }
 
@@ -127,6 +132,11 @@
 .calendar-grid button.offday,
 .calendar-grid button.active:nth-child(7n + 1) {
     color: tomato
+}
+
+.calendar-grid button.active.sel_day {
+    background-color: rgb(253, 134, 98);
+    opacity: 0.8;
 }
 
 .calendar-grid button.disable:nth-child(7n) {
@@ -141,6 +151,7 @@
 .date-picker {
     width: 200px;
     height: 30px;
+    margin-left: 20px;
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -149,4 +160,11 @@
     cursor: pointer;
     border: var(--blue-grey-300) solid 1px;
     border-radius: 5px;
+}
+
+@media (min-width: 280px) {
+    .calendar-grid button {
+        --width: var(--width-tablet);
+        /* Width of the element on tablet and up */
+    }
 }
