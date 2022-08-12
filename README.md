@@ -7,7 +7,7 @@
 
 ## 💁‍♂️ Introducing Project
 ### Date Picker
-> - HTML의 <input type="date"> 직접 구현해본 프로젝트
+> - HTML의 '<input type="date">' 직접 구현해본 프로젝트
 > - input을 클릭하면 처음 시작할 때는 오늘 날짜가 표기
 > - 클릭했을 때 눌렸던 날짜를 기준으로 달력 다시 렌더
 
